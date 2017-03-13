@@ -1,0 +1,26 @@
+{
+  "name": "appMVP",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "mongodb": "^2.2.24",
+    "route": "^0.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skebaish1992/samyMVP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skebaish1992/samyMVP/issues"
+  },
+  "homepage": "https://github.com/skebaish1992/samyMVP#readme"
+}

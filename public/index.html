@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app='subjectivityApp'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Subjectivity</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  </head>
+  <body>
+  <div>
+        <h2>Subjectivity</h2>
+  </div>
+
+    <div class='test' ng-controller='userResponseController'>
+      <ul>
+        <li ng-repeat="scores in responses">
+          <span>{{scores.name}}</span>
+          <span>{{scores.subject}}</span>
+          <span>{{scores.grade}}</span>
+      </li>
+      </ul>
+    </div>
+
+
+ </body>
+
+    <script src="node_modules/angular/angular.js"></script>
+<!--     <script src="node_modules/angular-route/angular-route.js"></script>
+ -->    <script src="app/app.js"></script>
+
+</html>
