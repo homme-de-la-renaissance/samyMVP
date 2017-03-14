@@ -3,7 +3,7 @@ angular.module('subjectivityRouter', ['ngRoute',
 ])
 .config(function ($routeProvider, $locationProvider) {
   $routeProvider
-    .when('/signIn', {
+    .when('/signin', {
       templateUrl: 'app/test/signin/signin.html'
       // // controller: 'AuthController',
       // authenticate: false
