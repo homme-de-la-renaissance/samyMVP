@@ -1,4 +1,4 @@
-var chartApp = angular.module("chartApp", ["chart.js"]).controller("BarCtrl",
+angular.module("subjectivityRouter.barChart", ["chart.js"]).controller("BarCtrl",
   function ($scope) {
     $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
     $scope.series = ['Series A', 'Series B'];
