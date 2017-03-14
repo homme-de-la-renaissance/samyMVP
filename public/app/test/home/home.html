@@ -1,0 +1,104 @@
+<!DOCTYPE html >
+<html ng-app='subjectivityRouter.subjectivityApp'>
+
+  <div class="text-center">
+    <h4>Welcome to Subjectivity! Please follow the instructions below! We are excited to see your progress!</h4>
+
+    <form class="text-center" novalidate ng-submit="addRow()">
+      First name:<br>
+     <input type="text" ng-model="firstName"><br>
+      Last name:<br>
+      <input type="text" ng-Model="lastName"><br>
+      Exam Score:<br>
+      <input type="text" ng-Model="examScore"><br>
+
+
+      <br>
+
+  <div class="dropdown">
+  <button class="dropbtn">How did you feel about this exam?</button>
+  <div class="dropdown-content">
+    <a href="#" value = "Great" ng-click= "setFeelingValue($event)">Great</a>
+    <a href="#" value = "Average" ng-click= "setFeelingValue($event)">Average</a>
+    <a href="#" value = "Bad" ng-click= "setFeelingValue($event)">Bad</a>
+  </div>
+</div>
+
+  <div class="dropdown">
+
+  <button class="dropbtn">What subject was this in?</button>
+  <div class="dropdown-content">
+    <a href="#" value = "Science" ng-click="setSubjectValue($event)">Science</a>
+    <a href="#" value = "Math" ng-click="setSubjectValue($event)">Math</a>
+    <a href="#" value = "English" ng-click= "setSubjectValue($event)">English</a>
+  </div>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  <input type="submit" value="Click me!">
+    <br>
+    <br>
+    <br>
+  </form>
+
+    <div class="alert alert-info">
+    <p>Sort Type: {{ sortType }}</p>
+    <p>Sort Reverse: {{ sortReverse }}</p>
+    <p>Search Query: {{ searchFish }}</p>
+  </div>
+
+
+</div>
+
+  <div>
+    <br>
+    <br>
+    <div class='text-center'>
+    <table class="table table-bordered table-striped">
+   <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+            Name
+            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'subject'; sortReverse = !sortReverse">
+          <span ng-show="sortType == 'subject' && sortReverse " class="fa fa-caret-down"></span>
+          Subject
+          </a>
+        </td>
+      <td>
+          <a href="#" ng-click="sortType = 'feeling'; sortReverse = !sortReverse">
+          <span ng-show="sortType == 'feeling' && sortReverse" class="fa fa-caret-down"></span>
+          Feeling
+          </a>
+        </td>
+      <td>
+          <a href="#" ng-click="sortType = 'grade'; sortReverse = !sortReverse">
+          <span ng-show="sortType == 'grade' && sortReverse" class="fa fa-caret-down"></span>
+          Grade
+          </a>
+        </td>
+      </tr>
+    </thead>
+
+
+
+
+  <tbody>
+  <tr ng-repeat='response in responses | orderBy:sortType:sortReverse | filter:searchNames'>
+    <td>
+      {{response.name}}</td>
+    <td>{{response.subject}}</td>
+    <td>{{response.feeling}}</td>
+    <td>{{response.examScore}}</td>
+  </tr>
+  </tbody>
+</table>
+    </div>
+
+</html>

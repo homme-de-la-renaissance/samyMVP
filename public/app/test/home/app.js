@@ -1,4 +1,4 @@
-var subjectivityApp = angular.module('subjectivityApp', []).controller('userResponseCtrl', function userResponseCtrl($scope) {
+ angular.module('subjectivityRouter.subjectivityApp', []).controller('userResponseCtrl', function userResponseCtrl($scope) {
 
   $scope.responses = [];
 
@@ -18,8 +18,6 @@ var subjectivityApp = angular.module('subjectivityApp', []).controller('userResp
       alert("Please fix your values!");
     } else {
         $scope.responses.push({ 'name': $scope.firstName + ' ' + $scope.lastName, 'subject': $scope.subject, 'feeling': $scope.feeling, 'examScore': $scope.examScore});
-
-
 
     console.log($scope.responses);
     }

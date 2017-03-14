@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html ng-app='subjectivityApp'>
+<!DOCTYPE html >
+<html ng-app='subjectivityRouter'>
   <head>
     <meta charset="utf-8" />
     <title>Subjectivity</title>
@@ -50,26 +50,12 @@
     background-color: #3e8e41;
 }
 
-
-
-
-
-
-
-
     </style>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-
-<!--     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
- -->
-<!--     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
- -->    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-
   </head>
-  <body ng-controller="userResponseCtrl">
+  <body>
   <div>
         <h1 class="text-center">Subjectivity <span><img src = https://s-media-cache-ak0.pinimg.com/originals/cc/68/05/cc68058cb8fcf470348ad9a6571e2f1a.gif height="48px"><span></h1>
   </div>
@@ -83,125 +69,25 @@
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/analytics">Analytics</a>
+        <a href="/#/analytics">Analytics</a>
       </li>
       <li>
-        <a href="/signIn">Sign In</a>
+        <a href="/#/signIn">Sign In</a>
       </li>
       <li>
-        <a href="/signup">Sign Up</a>
+        <a href="/#/signup">Sign Up</a>
       </li>
+
     </ul>
   </div>
+
 </nav>
-
-  <div class="text-center">
-    <h4>Welcome to Subjectivity! Please follow the instructions below! We are excited to see your progress!</h4>
-
-    <form class="text-center" novalidate ng-submit="addRow()">
-      First name:<br>
-     <input type="text" ng-model="firstName"><br>
-      Last name:<br>
-      <input type="text" ng-Model="lastName"><br>
-      Exam Score:<br>
-      <input type="text" ng-Model="examScore"><br>
-
-
-      <br>
-
-  <div class="dropdown">
-  <button class="dropbtn">How did you feel about this exam?</button>
-  <div class="dropdown-content">
-    <a href="#" value = "Great" ng-click= "setFeelingValue($event)">Great</a>
-    <a href="#" value = "Average" ng-click= "setFeelingValue($event)">Average</a>
-    <a href="#" value = "Bad" ng-click= "setFeelingValue($event)">Bad</a>
-  </div>
-</div>
-
-  <div class="dropdown">
-
-  <button class="dropbtn">What subject was this in?</button>
-  <div class="dropdown-content">
-    <a href="#" value = "Science" ng-click="setSubjectValue($event)">Science</a>
-    <a href="#" value = "Math" ng-click="setSubjectValue($event)">Math</a>
-    <a href="#" value = "English" ng-click= "setSubjectValue($event)">English</a>
-  </div>
-  </div>
-    <br>
-    <br>
-    <br>
-    <br>
-  <input type="submit" value="Click me!">
-    <br>
-    <br>
-    <br>
-  </form>
-
-    <div class="alert alert-info">
-    <p>Sort Type: {{ sortType }}</p>
-    <p>Sort Reverse: {{ sortReverse }}</p>
-    <p>Search Query: {{ searchFish }}</p>
-  </div>
-
-
-</div>
-
-  <div>
-    <br>
-    <br>
-    <div class='text-center'>
-    <table class="table table-bordered table-striped">
-   <thead>
-      <tr>
-        <td>
-          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-            Name
-            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
-          </a>
-        </td>
-        <td>
-          <a href="#" ng-click="sortType = 'subject'; sortReverse = !sortReverse">
-          <span ng-show="sortType == 'subject' && sortReverse " class="fa fa-caret-down"></span>
-          Subject
-          </a>
-        </td>
-      <td>
-          <a href="#" ng-click="sortType = 'feeling'; sortReverse = !sortReverse">
-          <span ng-show="sortType == 'feeling' && sortReverse" class="fa fa-caret-down"></span>
-          Feeling
-          </a>
-        </td>
-      <td>
-          <a href="#" ng-click="sortType = 'grade'; sortReverse = !sortReverse">
-          <span ng-show="sortType == 'grade' && sortReverse" class="fa fa-caret-down"></span>
-          Grade
-          </a>
-        </td>
-      </tr>
-    </thead>
-
-
-
-
-  <tbody>
-  <tr ng-repeat='response in responses | orderBy:sortType:sortReverse | filter:searchNames'>
-    <td>
-      {{response.name}}</td>
-    <td>{{response.subject}}</td>
-    <td>{{response.feeling}}</td>
-    <td>{{response.examScore}}</td>
-  </tr>
-  </tbody>
-</table>
-    </div>
+    <div ng-view></div>
 
  </body>
 
-<!--     <script src="../node_modules/angular/angular.js"></script>
- -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="app/app.js"></script>
- <script>
-
- </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
+    <script src="app/test/home/app.js"></script>
+    <script src="app/services.js"></script>
 </html>

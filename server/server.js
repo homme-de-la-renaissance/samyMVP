@@ -8,7 +8,11 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'));
+// app.use('../node_modules', express.static(__dirname + '/../node_modules'));
+// app.use('/../public/app/', express.static(__dirname + '/../public/app/'));
+
+
 // app.use(gzippo.staticGzip(__dirname + '/public'));
 
 mongoose.connect('mongodb://localhost/mvp');
@@ -25,22 +29,21 @@ app.listen(port);
 
 console.log("Now listening to port" + port);
 
-app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/../public/index.html'));
-});
+// app.get('/',function(req,res) {
+//   res.sendFile(path.join(__dirname+'/../public/index.html'));
+// });
 
-app.get('/signup',function(req,res){
-  res.sendFile(path.join(__dirname+'/../public/signup.html'));
-});
+// app.get('/signup',function(req,res){
+//   res.sendFile(path.join(__dirname+'/../public/signup.html'));
+// });
 
-app.get('/analytics',function(req,res){
-  res.sendFile(path.join(__dirname+'/../public/analytics.html'));
-});
+// app.get('/analytics',function(req,res){
+//   res.sendFile(path.join(__dirname+'/../public/analytics.html'));
+// });
 
-app.get('/signIn',function(req,res) {
-  res.sendFile(path.join(__dirname+'/../public/signin.html'));
-});
-
+// app.get('/signIn',function(req,res) {
+//   res.sendFile(path.join(__dirname+'/../public/signin.html'));
+// });
 
 // export our app for testing and flexibility, required by index.js
 module.exports = app;
