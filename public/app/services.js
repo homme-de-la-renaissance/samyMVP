@@ -1,5 +1,5 @@
 angular.module('subjectivityRouter', ['ngRoute',
-  'subjectivityRouter.subjectivityApp', 'subjectivityRouter.barChart'
+  'subjectivityRouter.subjectivityApp'
 ])
 .config(function ($routeProvider, $locationProvider) {
   $routeProvider
@@ -13,8 +13,7 @@ angular.module('subjectivityRouter', ['ngRoute',
     })
     // Your code here
     .when('/analytics', {
-      templateUrl: 'app/test/analytics/analytics.html',
-      controller: 'BarCtrl'
+      templateUrl: 'app/test/analytics/analytics.html'
       // controller: 'LinksController',
       // authenticate: true
     })
