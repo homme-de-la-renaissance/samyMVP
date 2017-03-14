@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost/mvp');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Connected to MongoDB database')
+  console.log('Connected to MongoDB database');
 });
 
 
@@ -35,6 +35,10 @@ app.get('/signup',function(req,res){
 
 app.get('/analytics',function(req,res){
   res.sendFile(path.join(__dirname+'/../public/analytics.html'));
+});
+
+app.get('/signIn',function(req,res) {
+  res.sendFile(path.join(__dirname+'/../public/signin.html'));
 });
 
 

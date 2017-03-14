@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='subjectivityApp'>
+<html ng-app='chartApp'>
   <head>
     <meta charset="utf-8" />
     <title>Subjectivity</title>
@@ -11,7 +11,6 @@
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 
   </head>
-  <body ng-controller="userResponseCtrl">
   <div>
         <h1 class="text-center">Subjectivity <span><img src = https://s-media-cache-ak0.pinimg.com/originals/cc/68/05/cc68058cb8fcf470348ad9a6571e2f1a.gif height="48px"><span></h1>
   </div>
@@ -19,57 +18,48 @@
 
   <nav class="navbar navbar-inverse navbar-static-top">
   <div class="container">
-    <a class="navbar-brand" href="#/">Subjectivity Signup<xss</a>
+    <a class="navbar-brand" href="#/">Subjectivity Analytics</a>
     <ul class="nav navbar-nav">
       <li>
         <a href="/">Home</a>
       </li>
-      <li>
+      <li class='active'>
         <a href="/analytics">Analytics</a>
       </li>
       <li>
         <a href="/signIn">Sign In</a>
       </li>
-      <li class="active">
-        <a href="/signup">Signup</a>
+      <li>
+        <a href="/signup">Sign Up</a>
       </li>
     </ul>
   </div>
 </nav>
 
   <div class="text-center">
-    <h4>Welcome to Subjectivity Signup! Follow the instructions below to get started!</h4>
-
-  <div id='signup' class="text-center">
-  <h1>Signup</h1>
-  <form  name="signupForm" ng-submit='signup()'>
-    Username:
-    <input type='text' ng-model='user.username' class="text-center"><br><br>
-    Password:
-    <input type="password" ng-model='user.password'>
-    <button>signup</button>
-  </form><br>
-  <a href="/signIn">Already have an account? <strong>Signin</strong> ...</a>
-</div>
-  </div><br><br><br>
-    <div class="text-center">
-    <img src=http://webneel.com/daily/sites/default/files/images/daily/10-2013/19-oleg-shuplyak-illusion-art.jpg height="500"><
+    <h4>Welcome to Subjectivity Analytics! Check out your results below!</h4>
   </div>
+  <br><br><br>
+<div class="col-lg-6 col-sm-12" ng-controller="BarCtrl">
+<canvas id="base" class="chart-horizontal-bar"
+  chart-data="data" chart-labels="labels" >
+</canvas>
+<div>
 
+
+  <br><br><br>
+<div class ="text-center">
+  <img src=http://i.huffpost.com/gadgets/slideshows/239193/slide_239193_1236489_free.jpg height="300">
+</div>
  </body>
 
-    <script src="node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="app/app.js"></script>
+    <script src="app/angularChart.js"></script>
  <script>
 
  </script>
 </html>
-
-
-
-
-
-
-

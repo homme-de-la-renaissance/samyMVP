@@ -13,18 +13,11 @@ var subjectivityApp = angular.module('subjectivityApp', []).controller('userResp
     $scope.feeling = $event.target.getAttribute('value');
   };
 
-  // $scope.setExamScore = function() {
-  //   $scope.examScore = $event.target.getAttribute('value');
-  //   console.log($event.target);
-  // };
-
-
-
   $scope.addRow = function() {
     if (!$scope.firstName || !$scope.lastName || !$scope.feeling || !$scope.examScore) {
       alert("Please fix your values!");
     } else {
-          $scope.responses.push({ 'name': $scope.firstName + ' ' + $scope.lastName, 'subject': $scope.subject, 'feeling': $scope.feeling, 'examScore': $scope.examScore});
+        $scope.responses.push({ 'name': $scope.firstName + ' ' + $scope.lastName, 'subject': $scope.subject, 'feeling': $scope.feeling, 'examScore': $scope.examScore});
 
 
 
