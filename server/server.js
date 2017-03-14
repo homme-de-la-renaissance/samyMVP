@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var path    = require("path");
 var app = express();
-var gzippo = require('gzippo');
+// var gzippo = require('gzippo');
 
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
