@@ -4,20 +4,78 @@
     <meta charset="utf-8" />
     <title>Subjectivity</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   </head>
-  <body>
+  <body ng-controller="userResponseCtrl">
   <div>
-        <h2>Subjectivity</h2>
+        <h2 class="text-center">Subjectivity</h2>
   </div>
 
-    <div class='test' ng-controller='userResponseController'>
-      <ul>
-        <li ng-repeat="scores in responses">
-          <span>{{scores.name}}</span>
-          <span>{{scores.subject}}</span>
-          <span>{{scores.grade}}</span>
-      </li>
-      </ul>
+  <div class="text-center">
+    <h4>Welcome to Subjectivity! Please follow the instructions below! We are excited to see your progress!</h4>
+
+    <form class="text-center" novalidate ng-submit="addRow()">
+      First name:<br>
+     <input type="text" ng-model="firstName"><br>
+      Last name:<br>
+      <input type="text" ng-Model="lastName"><br>
+
+
+      <br>
+
+  <div class="dropdown">
+  <button class="dropbtn">How did you feel about this exam?</button>
+  <div class="dropdown-content">
+    <a href="#" value = "Great" ng-click= "setFeelingValue($event)">Great</a>
+    <a href="#" value = "Average" ng-click= "setFeelingValue($event)">Average</a>
+    <a href="#" value = "Bad" ng-click= "setFeelingValue($event)">Bad</a>
+  </div>
+</div>
+
+  <div class="dropdown">
+
+  <button class="dropbtn">What subject was this in?</button>
+  <div class="dropdown-content">
+    <a href="#" value = "Science" ng-click="setSubjectValue($event)">Science</a>
+    <a href="#" value = "Math" ng-click="setSubjectValue($event)">Math</a>
+    <a href="#" value = "English" ng-click= "setSubjectValue($event)">English</a>
+  </div>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  <input type="submit" value="Click me!">
+    <br>
+    <br>
+    <br>
+  </form>
+
+</div>
+
+  <div>
+    <br>
+    <br>
+    <div class='text-center'>
+    <table class="table">
+  <tr>
+    <th>Name
+    </th>
+    <th>Subject
+    </th>
+    <th>Feeling
+    </th>
+  </tr>
+  <tr ng-repeat='response in responses'>
+    <td>{{response.name}}
+    </td>
+    <td>{{response.subject}}
+    </td>
+    <td>{{response.feeling}}
+    </td>
+  </tr>
+</table>
+
     </div>
 
 
@@ -26,5 +84,4 @@
     <script src="node_modules/angular/angular.js"></script>
 <!--     <script src="node_modules/angular-route/angular-route.js"></script>
  -->    <script src="app/app.js"></script>
-
 </html>
