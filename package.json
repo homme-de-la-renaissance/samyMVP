@@ -5,12 +5,12 @@
   "main": "app.js",
   "dependencies": {
     "angular": "^1.6.3",
-    "mongodb": "^2.2.24",
-    "route": "^0.2.5",
     "body-parser": "^1.4.3",
     "express": "^4.4.5",
     "mongodb": "^2.2.24",
-    "mongoose": "^4.1.0"
+    "mongoose": "^4.1.0",
+    "route": "^0.2.5",
+    "webpack": "^2.2.1"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -22,6 +22,7 @@
     "mongoose": "^4.1.0"
   },
   "scripts": {
+    "build": "NODE_ENV=production webpack --config ./webpack.dev.config.js --progress --colors",
     "start": "node server/server.js"
   },
   "repository": {
