@@ -2,15 +2,18 @@
   "name": "appMVP",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "angular": "^1.6.3",
     "mongodb": "^2.2.24",
     "route": "^0.2.5"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
