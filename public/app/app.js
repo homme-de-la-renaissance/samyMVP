@@ -1,14 +1,9 @@
 var subjectivityApp = angular.module('subjectivityApp', []).controller('userResponseCtrl', function userResponseCtrl($scope) {
 
   $scope.responses = [];
-  // $scope.response.firstName = $scope.firstName;
-  // $scope.response.lastName = $scope.lastName;
-  // $scope.responses = [
-  // ];
 
-  // $scope.submitForm = function(firstName, lastName) {
-  //   $scope.firstName = firstName;
-  //   $scope.lastName = lastName;
+  $scope.sortType = 'Name'; // set the default sort type
+  $scope.sortReverse = false;  // set the default sort order
 
   $scope.setSubjectValue = function($event) {
     $scope.subject = $event.target.getAttribute('value');
@@ -18,10 +13,24 @@ var subjectivityApp = angular.module('subjectivityApp', []).controller('userResp
     $scope.feeling = $event.target.getAttribute('value');
   };
 
+  // $scope.setExamScore = function() {
+  //   $scope.examScore = $event.target.getAttribute('value');
+  //   console.log($event.target);
+  // };
+
+
+
   $scope.addRow = function() {
-    $scope.responses.push({ 'name': $scope.firstName + ' ' + $scope.lastName, 'subject': $scope.subject, 'feeling': $scope.feeling});
+    if (!$scope.firstName || !$scope.lastName || !$scope.feeling || !$scope.examScore) {
+      alert("Please fix your values!");
+    } else {
+          $scope.responses.push({ 'name': $scope.firstName + ' ' + $scope.lastName, 'subject': $scope.subject, 'feeling': $scope.feeling, 'examScore': $scope.examScore});
+
+
 
     console.log($scope.responses);
+    }
+
 
   };
 
