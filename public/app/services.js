@@ -4,16 +4,16 @@ angular.module('subjectivityRouter', ['ngRoute',
 .config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/signIn', {
-      templateUrl: 'app/test/signIn.html'
+      templateUrl: 'app/test/signIn/signIn.html'
       // // controller: 'AuthController',
       // authenticate: false
     })
     .when('/signup', {
-      templateUrl: 'app/test/signUp.html'
+      templateUrl: 'app/test/signup/signUp.html'
     })
     // Your code here
     .when('/analytics', {
-      templateUrl: 'app/test/analytics.html'
+      templateUrl: 'app/test/analytics/analytics.html'
       // controller: 'LinksController',
       // authenticate: true
     })
