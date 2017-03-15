@@ -2,6 +2,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var path    = require("path");
 var app = express();
+var handler = require('./request-handler.js');
+
 // var gzippo = require('gzippo');
 
 var mongoose = require('mongoose');
@@ -23,27 +25,14 @@ db.once('open', function() {
 });
 
 
+var handler = require('./requestHandler.js');
+
 var port = process.env.PORT || 1337;
 
 app.listen(port);
 
 console.log("Now listening to port" + port);
 
-// app.get('/',function(req,res) {
-//   res.sendFile(path.join(__dirname+'/../public/index.html'));
-// });
 
-// app.get('/signup',function(req,res){
-//   res.sendFile(path.join(__dirname+'/../public/signup.html'));
-// });
 
-// app.get('/analytics',function(req,res){
-//   res.sendFile(path.join(__dirname+'/../public/analytics.html'));
-// });
-
-// app.get('/signIn',function(req,res) {
-//   res.sendFile(path.join(__dirname+'/../public/signin.html'));
-// });
-
-// export our app for testing and flexibility, required by index.js
 module.exports = app;
