@@ -3,7 +3,8 @@
   $scope.responses = [];
 
   $scope.sortType = 'Name'; // set the default sort type
-  $scope.sortReverse = false;  // set the default sort order
+  $scope.sortReverse = false;
+  $scope.searchName = '';  // set the default sort order
 
   $scope.setSubjectValue = function($event) {
     $scope.subject = $event.target.getAttribute('value');
@@ -19,9 +20,10 @@
     } else {
         $scope.responses.push({ 'name': $scope.firstName + ' ' + $scope.lastName, 'subject': $scope.subject, 'feeling': $scope.feeling, 'examScore': $scope.examScore});
 
+        $scope.firstName, $scope.lastName, $scope.subject, $scope.feeling, $scope.examScore = '';
+
     console.log($scope.responses);
     }
-
 
   };
 

@@ -12,15 +12,17 @@
       Exam Score:<br>
       <input type="text" ng-Model="examScore"><br>
 
-
       <br>
 
   <div class="dropdown">
   <button class="dropbtn">How did you feel about this exam?</button>
   <div class="dropdown-content">
+    <a href="#" value = "Aced it!" ng-click= "setFeelingValue($event)">Aced It!</a>
     <a href="#" value = "Great" ng-click= "setFeelingValue($event)">Great</a>
     <a href="#" value = "Average" ng-click= "setFeelingValue($event)">Average</a>
     <a href="#" value = "Bad" ng-click= "setFeelingValue($event)">Bad</a>
+    <a href="#" value = "Terrible" ng-click= "setFeelingValue($event)">Terrible</a>
+
   </div>
 </div>
 
@@ -31,8 +33,20 @@
     <a href="#" value = "Science" ng-click="setSubjectValue($event)">Science</a>
     <a href="#" value = "Math" ng-click="setSubjectValue($event)">Math</a>
     <a href="#" value = "English" ng-click= "setSubjectValue($event)">English</a>
+    <a href="#" value = "CS" ng-click= "setSubjectValue($event)">CS</a>
+    <a href="#" value = "Art" ng-click= "setSubjectValue($event)">Art</a>
+
   </div>
-  </div>
+  </div><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -43,10 +57,24 @@
     <br>
   </form>
 
+      <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+        <input type="text" class="form-control" placeholder="Search for student" ng-model="searchName">
+
+      </div>
+    </div>
+  </form>
+
+
+
+
     <div class="alert alert-info">
     <p>Sort Type: {{ sortType }}</p>
     <p>Sort Reverse: {{ sortReverse }}</p>
-    <p>Search Query: {{ searchFish }}</p>
+    <p>Search Query: {{ searchName }}</p>
   </div>
 
 
@@ -90,7 +118,7 @@
 
 
   <tbody>
-  <tr ng-repeat='response in responses | orderBy:sortType:sortReverse | filter:searchNames'>
+  <tr ng-repeat='response in responses | orderBy:sortType:sortReverse | filter:searchName'>
     <td>
       {{response.name}}</td>
     <td>{{response.subject}}</td>
